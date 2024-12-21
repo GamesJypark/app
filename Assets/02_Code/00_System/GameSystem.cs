@@ -53,12 +53,23 @@ public class GameSystem : MonoBehaviour
             chats[0].Spawn(1, 1, GoodChat_images[Random.Range(0, 6)]);
         }
     }
-    private void Update()
+    void OnEnable()
     {
-        Timer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Z))
+        // 씬 매니저의 sceneLoaded에 체인을 건다.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // 체인을 걸어서 이 함수는 매 씬마다 호출된다.
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "02_MainScene")
         {
             GameSet();
         }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
