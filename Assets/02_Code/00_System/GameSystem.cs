@@ -13,6 +13,7 @@ public class GameSystem : MonoBehaviour
     public int Score = 0;
     private int Hp = 0;
     public float Timer = 0;
+    private bool GameStart = false;
     void Awake()
     {
         if(gameSystem == null)
@@ -30,6 +31,7 @@ public class GameSystem : MonoBehaviour
         Score = 0;
         Hp = 4;
         Timer = 0;
+        GameStart = true;
         ChatSpawn();
     }
     public void ScoreUp(int Quantity)
@@ -57,7 +59,7 @@ public class GameSystem : MonoBehaviour
     }
     private void Update()
     {
-        Timer += Time.deltaTime;
+        if(GameStart)Timer += Time.deltaTime;
     }
     void OnEnable()
     {
@@ -72,6 +74,10 @@ public class GameSystem : MonoBehaviour
         {
             GameSet();
             hpbarscript = FindFirstObjectByType<hpbarscript>();
+        }
+        else
+        {
+            GameStart = false;
         }
 
         if (Hp <= 0)
