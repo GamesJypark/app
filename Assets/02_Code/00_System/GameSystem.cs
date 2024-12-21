@@ -32,6 +32,7 @@ public class GameSystem : MonoBehaviour
         Hp = 4;
         Timer = 0;
         GameStart = true;
+        
         ChatSpawn();
     }
     public void ScoreUp(int Quantity)
@@ -59,7 +60,28 @@ public class GameSystem : MonoBehaviour
     }
     private void Update()
     {
-        if(GameStart)Timer += Time.deltaTime;
+        if (GameStart)
+        {
+            hpbarscript = FindFirstObjectByType<hpbarscript>();
+            UI = FindFirstObjectByType<UiScene>();
+            Timer += Time.deltaTime;
+            if(Hp <= 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+        }
+            if (Input.GetKeyDown(KeyCode.A))
+        {
+            SceneManager.LoadScene(0);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SceneManager.LoadScene(1);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
     void OnEnable()
     {
@@ -72,9 +94,9 @@ public class GameSystem : MonoBehaviour
     {
         if (scene.name == "02_MainScene")
         {
-            GameSet();
-            hpbarscript = FindFirstObjectByType<hpbarscript>();
-            UI = FindFirstObjectByType<UiScene>();
+            Hp = 4;
+            
+
         }
         else
         {
