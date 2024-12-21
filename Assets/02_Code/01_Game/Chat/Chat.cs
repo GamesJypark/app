@@ -30,8 +30,8 @@ public class Chat : MonoBehaviour
         }
         else
         {
-            if (Speed < 10) Speed = Mathf.Pow(2, GameSystem.gameSystem.Timer / 10);
-            else Speed = 10;
+            if (Speed < 7) Speed = 2 + Mathf.Pow(2, GameSystem.gameSystem.Timer / 10);
+            else Speed = 7;
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + Time.deltaTime * 100 * Speed);
             if(gameObject.GetComponent<RectTransform>().anchoredPosition.y >= -310 && isMoved == false)
             {
