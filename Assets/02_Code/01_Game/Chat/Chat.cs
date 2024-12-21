@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,9 +8,10 @@ public class Chat : MonoBehaviour
     [SerializeField]private int Score;
     [SerializeField]private float Move_Cycle_Max;
     [SerializeField]private float Move_Cycle_Now;
-    public void Spawn(int Input_Score, float Input_Move_Cycle)
+    public void Spawn(int Input_Score, float Input_Move_Cycle, Sprite sprite)
     {
         Chat chat1 = Instantiate(gameObject).GetComponent<Chat>();
+        chat1.GetComponent<Image>().sprite = sprite;
         chat1.transform.SetParent(FindFirstObjectByType<Canvas>().transform, false);
         chat1.Score = Input_Score;
         chat1.Move_Cycle_Max = Input_Move_Cycle;
@@ -30,14 +32,14 @@ public class Chat : MonoBehaviour
             }
             else
             {
-                if (gameObject.GetComponent<RectTransform>().anchoredPosition.y + 80 >= 400)
+                if (gameObject.GetComponent<RectTransform>().anchoredPosition.y + 90 > 400)
                 {
                     Debug.Log("½ÇÆÐ!");
                     Destroy(gameObject);
                 }
                 else
                 {
-                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + 80);
+                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + 90);
 
                 }
                 Move_Cycle_Now = Move_Cycle_Max;
