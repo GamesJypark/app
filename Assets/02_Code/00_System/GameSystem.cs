@@ -1,14 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSystem : MonoBehaviour
 {
     public static GameSystem gameSystem = null;
-    public Chat[] chats; // 0ÀÌ ÁÁÀº Ã¤ÆÃ, 1ÀÌ ³ª»Û Ã¤ÆÃ
+    public Chat[] chats; // 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½, 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½
     public Sprite[] BadChat_images;
     public Sprite[] GoodChat_images;
     public hpbarscript hpbarscript;
-    private int Score = 0;
+    public UiScene UI;
+    public int Score = 0;
     private int Hp = 0;
     public float Timer = 0;
     void Awake()
@@ -33,13 +35,13 @@ public class GameSystem : MonoBehaviour
     public void ScoreUp(int Quantity)
     {
         Score += Quantity;
-        Debug.Log("ÇöÀç Á¡¼ö : " + Score);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + Score);
     }
     public void Fault(int Quantity)
     {
         Hp -= Quantity;
         hpbarscript.status = (hpbarscript.hpstatus)Hp-1;
-        Debug.Log("³¶Àº Ã¼·Â : " + Hp);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ : " + Hp);
     }
     public void ChatSpawn()
     {
@@ -59,6 +61,11 @@ public class GameSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             GameSet();
+        }
+
+        if (Hp <= 0)
+        {
+            UI.uista = UiScene.UIStatus.end;
         }
     }
 }
