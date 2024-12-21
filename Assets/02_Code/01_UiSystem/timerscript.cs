@@ -14,11 +14,7 @@ public class timerscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Scene.uista == UiScene.UIStatus.play)
-        {
             timer += Time.deltaTime;
             timertext.text =(int)timer + "초";
-        }
-      
     }
 }

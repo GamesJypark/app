@@ -14,7 +14,8 @@ public class UiScene : MonoBehaviour
 
     public List<GameObject> pane;
     public Text playername;
-    
+    public InputField playerNameInput;
+    public string player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,16 +30,29 @@ public class UiScene : MonoBehaviour
             case UIStatus.start:
                 pane[0].SetActive(true);
                 pane[1].SetActive(false);
-                pane[2].SetActive(false);
+                
+                    InputName();
+                
                 break;
             case UIStatus.play:
                 pane[0].SetActive(false);
                 pane[1].SetActive(true);
-                pane[2].SetActive(true);
+                playername.text = player;
                 break;
             case UIStatus.end:
                 SceneManager.LoadScene("03_EndingScene");
             break;
         }
+    }
+
+    public void starttoplay()
+    {
+        uista = UIStatus.play;
+        playername.text = player;
+    }
+
+    public void InputName()
+    {
+        player = playerNameInput.text;
     }
 }
