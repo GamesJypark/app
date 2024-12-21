@@ -14,6 +14,7 @@ public class GameSystem : MonoBehaviour
     public int Hp = 0;
     public float Timer = 0;
     private bool GameStart = false;
+    public bool isBossExist = false;
     void Awake()
     {
         if(gameSystem == null)
@@ -32,7 +33,7 @@ public class GameSystem : MonoBehaviour
         Hp = 4;
         Timer = 0;
         GameStart = true;
-        
+        isBossExist = false;
         ChatSpawn();
     }
     public void ScoreUp(int Quantity)
@@ -46,6 +47,17 @@ public class GameSystem : MonoBehaviour
         hpbarscript.status = (hpbarscript.hpstatus)Hp-1;
         Debug.Log("���� ü�� : " + Hp);
     }
+    public void BossAdvent()
+    {
+        isBossExist = true;
+        Debug.Log("보스등장");
+
+    }
+    public void BossDead()
+    {
+        isBossExist = false;
+        Debug.Log("보스퇴장");
+    }
     public void ChatSpawn()
     {
         int i = Random.Range(0, 101);
@@ -53,9 +65,23 @@ public class GameSystem : MonoBehaviour
         {
             chats[1].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
         }
-        else if(i > 95 && i <= 100)
+        else if(i > 95 && i <= 99)
         {
+
             chats[2].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+        }
+        else if(i == 100)
+        {
+            if (isBossExist == false)
+            {
+                chats[3].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+                BossAdvent();
+            }
+            else
+            {
+                Debug.Log("이미 보스 있어서 깜빡이는 애가 대신 나옴");
+                chats[2].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+            }
         }
         else
         {

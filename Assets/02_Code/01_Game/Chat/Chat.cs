@@ -30,7 +30,8 @@ public class Chat : MonoBehaviour
         }
         else
         {
-            if (Speed < 7) Speed = 2 + Mathf.Pow(2, GameSystem.gameSystem.Timer / 10);
+            if (GameSystem.gameSystem.isBossExist) Speed = 2;
+            else if (Speed < 7) Speed = 2 + Mathf.Pow(2, GameSystem.gameSystem.Timer / 10);
             else Speed = 7;
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + Time.deltaTime * 100 * Speed);
             if(gameObject.GetComponent<RectTransform>().anchoredPosition.y >= -310 && isMoved == false)
@@ -43,15 +44,22 @@ public class Chat : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
                     boom.GetComponent<deleteboom>().spawns();
-                    if (gameObject.tag == "Bad")
+                    if (gameObject.tag != "Boss")
                     {
-                        GameSystem.gameSystem.ScoreUp(Score);
+                        if (gameObject.tag == "Bad")
+                        {
+                            GameSystem.gameSystem.ScoreUp(Score);
+                        }
+                        if (gameObject.tag == "Good")
+                        {
+                            GameSystem.gameSystem.Fault(Score);
+                        }
+                        Destroy(gameObject);
                     }
-                    if(gameObject.tag == "Good")
+                    else
                     {
-                        GameSystem.gameSystem.Fault(Score);
+                        gameObject.GetComponent<Boss_Chat>().hurt();
                     }
-                    Destroy(gameObject);
                 }
             }
         }
