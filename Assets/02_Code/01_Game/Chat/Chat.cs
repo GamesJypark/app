@@ -31,7 +31,7 @@ public class Chat : MonoBehaviour
             if(gameObject.GetComponent<RectTransform>().anchoredPosition.y >= -400 && isMoved == false)
             {
                 isMoved = true;
-                FindFirstObjectByType<TestSystem>().ChatSpawn();
+                GameSystem.gameSystem.ChatSpawn();
             }
         }
     }

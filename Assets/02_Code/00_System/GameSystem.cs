@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameSystem : MonoBehaviour
 {
     public static GameSystem gameSystem = null;
-    public Chat chat;
+    public Chat[] chats; // 0이 좋은 채팅, 1이 나쁜 채팅
     public Sprite[] BadChat_images;
     public Sprite[] GoodChat_images;
     private int Score = 0;
@@ -29,6 +29,7 @@ public class GameSystem : MonoBehaviour
         Fault_Score = 0;
         Max_Time = 100;
         Exist_Time = 0;
+        ChatSpawn();
     }
     public void ScoreUp(int Quantity)
     {
@@ -36,11 +37,21 @@ public class GameSystem : MonoBehaviour
     }
     public void ChatSpawn()
     {
-        chat.Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+        int i = Random.Range(0, 101);
+        if(i > 90)
+        {
+            chats[1].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+        }
+        else
+        {
+            chats[0].Spawn(1, 1, GoodChat_images[Random.Range(0, 6)]);
+        }
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void Update()
     {
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            GameSet();
+        }
     }
 }
