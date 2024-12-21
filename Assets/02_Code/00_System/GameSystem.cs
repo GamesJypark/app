@@ -7,8 +7,9 @@ public class GameSystem : MonoBehaviour
     public Chat[] chats; // 0이 좋은 채팅, 1이 나쁜 채팅
     public Sprite[] BadChat_images;
     public Sprite[] GoodChat_images;
+    public hpbarscript hpbarscript;
     private int Score = 0;
-    private int Fault_Score = 0;
+    private int Hp = 0;
     private float Max_Time = 0;
     private float Exist_Time = 0;
     void Awake()
@@ -26,7 +27,7 @@ public class GameSystem : MonoBehaviour
     public void GameSet()
     {
         Score = 0;
-        Fault_Score = 0;
+        Hp = 4;
         Max_Time = 100;
         Exist_Time = 0;
         ChatSpawn();
@@ -38,8 +39,9 @@ public class GameSystem : MonoBehaviour
     }
     public void Fault(int Quantity)
     {
-        Fault_Score += Quantity;
-        Debug.Log("현재 잘못 잡은 점수 : " + Fault_Score);
+        Hp -= Quantity;
+        hpbarscript.status = (hpbarscript.hpstatus)Hp-1;
+        Debug.Log("낭은 체력 : " + Hp);
     }
     public void ChatSpawn()
     {

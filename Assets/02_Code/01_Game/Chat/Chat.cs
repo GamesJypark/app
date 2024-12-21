@@ -21,6 +21,10 @@ public class Chat : MonoBehaviour
     {
         if (gameObject.GetComponent<RectTransform>().anchoredPosition.y > 490)
         {
+            if(gameObject.tag == "Bad")
+            {
+                GameSystem.gameSystem.Fault(Score);
+            }
             Destroy(gameObject);
         }
         else
