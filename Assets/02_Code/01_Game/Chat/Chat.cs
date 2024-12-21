@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Chat : MonoBehaviour
 {
+    public GameObject boom;
     [SerializeField]private int Score;
     [SerializeField]private float Speed;
     [SerializeField] private bool isMoved = false;
@@ -40,6 +41,7 @@ public class Chat : MonoBehaviour
             {
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
+                    boom.GetComponent<deleteboom>().spawns();
                     if (gameObject.tag == "Bad")
                     {
                         GameSystem.gameSystem.ScoreUp(Score);

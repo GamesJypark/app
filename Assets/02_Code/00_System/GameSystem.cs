@@ -58,14 +58,30 @@ public class GameSystem : MonoBehaviour
     private void Update()
     {
         Timer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Z))
+    }
+    void OnEnable()
+    {
+        // 씬 매니저의 sceneLoaded에 체인을 건다.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // 체인을 걸어서 이 함수는 매 씬마다 호출된다.
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "02_MainScene")
         {
             GameSet();
+            hpbarscript = FindFirstObjectByType<hpbarscript>();
         }
 
         if (Hp <= 0)
         {
             UI.uista = UiScene.UIStatus.end;
         }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
