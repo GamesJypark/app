@@ -34,6 +34,12 @@ public class GameSystem : MonoBehaviour
     public void ScoreUp(int Quantity)
     {
         Score += Quantity;
+        Debug.Log("현재 점수 : " + Score);
+    }
+    public void Fault(int Quantity)
+    {
+        Fault_Score += Quantity;
+        Debug.Log("현재 잘못 잡은 점수 : " + Fault_Score);
     }
     public void ChatSpawn()
     {
