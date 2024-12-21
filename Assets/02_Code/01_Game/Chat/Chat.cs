@@ -36,7 +36,7 @@ public class Chat : MonoBehaviour
                 isMoved = true;
                 GameSystem.gameSystem.ChatSpawn();
             }
-            if (gameObject.GetComponent<RectTransform>().anchoredPosition.y >= 220 && gameObject.GetComponent<RectTransform>().anchoredPosition.y <= 330)
+            if (gameObject.GetComponent<RectTransform>().anchoredPosition.y >= 215 && gameObject.GetComponent<RectTransform>().anchoredPosition.y <= 315)
             {
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
