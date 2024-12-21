@@ -510,7 +510,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 734247097}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1891251887}
+        m_TargetAssemblyTypeName: SceneMoving, Assembly-CSharp
+        m_MethodName: Scenemoving
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &734247097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1508328475661427623, guid: 43f7b766872015e4db929e41570c2f81, type: 3}
+  m_Sprite: {fileID: -1026656385, guid: 63a59745e0e40824fa206e88d718f8dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
