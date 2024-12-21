@@ -17,4 +17,8 @@ public class timerscript : MonoBehaviour
             timer += Time.deltaTime;
             timertext.text =(int)timer + "초";
     }
+    public float getTimer()
+    {
+        return timer;
+    }
 }

@@ -53,6 +53,14 @@ public class GameSystem : MonoBehaviour
             chats[0].Spawn(1, 1, GoodChat_images[Random.Range(0, 6)]);
         }
     }
+    private void Update()
+    {
+        Timer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            GameSet();
+        }
+    }
     void OnEnable()
     {
         // 씬 매니저의 sceneLoaded에 체인을 건다.
