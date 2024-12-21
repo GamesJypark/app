@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameSystem : MonoBehaviour
 {
     public static GameSystem gameSystem = null;
+    public webcam webcam;
     public Chat[] chats; // 0�� ���� ä��, 1�� ���� ä��
     public Sprite[] BadChat_images;
     public Sprite[] GoodChat_images;
@@ -43,6 +44,7 @@ public class GameSystem : MonoBehaviour
     }
     public void Fault(int Quantity)
     {
+        webcam.isHit = true;
         Hp -= Quantity;
         hpbarscript.status = (hpbarscript.hpstatus)Hp-1;
         Debug.Log("���� ü�� : " + Hp);
@@ -123,7 +125,7 @@ public class GameSystem : MonoBehaviour
         if (scene.name == "02_MainScene")
         {
             Hp = 4;
-            
+            webcam = FindFirstObjectByType<webcam>();
 
         }
         else
