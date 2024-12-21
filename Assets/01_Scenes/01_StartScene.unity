@@ -877,7 +877,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542871756}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1891251887}
+        m_TargetAssemblyTypeName: SceneMoving, Assembly-CSharp
+        m_MethodName: GameEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1542871756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,6 +1279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e0f0d0e9b05c94f9c76faebfd847b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  webcam: {fileID: 0}
   chats:
   - {fileID: 1195281777879786767, guid: 933f3e1ca92d1d04ba3a5a407893f544, type: 3}
   - {fileID: 1195281777879786767, guid: de3560d053092f04d8d977c4fa76b86c, type: 3}

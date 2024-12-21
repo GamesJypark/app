@@ -7,4 +7,8 @@ public class SceneMoving : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+    public void GameEnd()
+    {
+        Application.Quit();
+    }
 }
