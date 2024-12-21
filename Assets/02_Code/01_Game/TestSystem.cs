@@ -14,11 +14,11 @@ public class TestSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            chat.Spawn(1, 0.5f);
+            chat.Spawn(1, 1f);
         }
     }
     public void ChatSpawn()
     {
-        chat.Spawn(1, 0.5f);
+        chat.Spawn(1, 1);
     }
 }
