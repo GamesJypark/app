@@ -49,9 +49,13 @@ public class GameSystem : MonoBehaviour
     public void ChatSpawn()
     {
         int i = Random.Range(0, 101);
-        if(i > 90)
+        if(i > 85 && i <= 95)
         {
             chats[1].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+        }
+        else if(i > 95 && i <= 100)
+        {
+            chats[2].Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
         }
         else
         {

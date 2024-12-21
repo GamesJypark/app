@@ -1270,6 +1270,7 @@ MonoBehaviour:
   chats:
   - {fileID: 1195281777879786767, guid: 933f3e1ca92d1d04ba3a5a407893f544, type: 3}
   - {fileID: 1195281777879786767, guid: de3560d053092f04d8d977c4fa76b86c, type: 3}
+  - {fileID: 7854881355548579820, guid: 306b30857a9946d4f8b6b86b7f356284, type: 3}
   BadChat_images:
   - {fileID: 657193517335828509, guid: ded9c7ec6d7a9e4488845078c822605c, type: 3}
   - {fileID: 8595083788274730732, guid: 40106a213a514fb439499999d57015b3, type: 3}
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   hpbarscript: {fileID: 0}
   UI: {fileID: 0}
   Score: 0
+  Hp: 0
   Timer: 0
 --- !u!4 &1780388924
 Transform:
