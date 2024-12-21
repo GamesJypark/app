@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Chat : MonoBehaviour
 {
+    public GameObject canvars;
     [SerializeField]private int Score;
     [SerializeField]private float Move_Cycle_Max;
     [SerializeField]private float Move_Cycle_Now;
     public void Spawn(int Input_Score, float Input_Move_Cycle)
     {
-        Chat chat1 = Instantiate(gameObject, new Vector2(5, -3), Quaternion.identity).GetComponent<Chat>();
+        Chat chat1 = Instantiate(gameObject).GetComponent<Chat>();
+        chat1.transform.parent = canvars.transform;
         chat1.Score = Input_Score;
         chat1.Move_Cycle_Max = Input_Move_Cycle;
         chat1.Move_Cycle_Now = Input_Move_Cycle;
@@ -36,7 +38,7 @@ public class Chat : MonoBehaviour
                 }
                 else
                 {
-                    transform.position = new Vector2(transform.position.x, transform.position.y + 2);
+                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + 80);
 
                 }
                 Move_Cycle_Now = Move_Cycle_Max;
