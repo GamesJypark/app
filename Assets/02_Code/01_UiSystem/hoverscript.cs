@@ -11,23 +11,37 @@ public class hoverscript : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public float x;
     public float y;
     public int size;
+
+    
     private void Start()
     {
         x = button.rect.width;
         y = button.rect.height;
         size = text.fontSize;
+   
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-       
-        button.sizeDelta = new Vector2(x*1.5f, y*1.5f);
-        text.fontSize = (int)(size * 1.5);
+       Debug.Log("adad");
+      
+           button.sizeDelta = new Vector2(x * 1.2f , y * 1.2f);
+      
+       if (text.fontSize <= size * 1.2f)
+       {
+           text.fontSize += 1;
+       }
     }
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        button.sizeDelta = new Vector2(x, y);
-        text.fontSize = size;
+      
+            button.sizeDelta = new Vector2(x,y);
+        
+
+        if (text.fontSize >= size )
+        {
+            text.fontSize -= 1;
+        }
     }
 }
