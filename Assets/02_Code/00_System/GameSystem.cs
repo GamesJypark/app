@@ -22,6 +22,7 @@ public class GameSystem : MonoBehaviour
         {
             gameSystem = this;
             DontDestroyOnLoad(gameObject);
+            Application.targetFrameRate = 60;
         }
         else
         {
