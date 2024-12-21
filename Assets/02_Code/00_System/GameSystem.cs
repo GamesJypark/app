@@ -11,7 +11,7 @@ public class GameSystem : MonoBehaviour
     public hpbarscript hpbarscript;
     public UiScene UI;
     public int Score = 0;
-    private int Hp = 0;
+    public int Hp = 0;
     public float Timer = 0;
     private bool GameStart = false;
     void Awake()
@@ -73,11 +73,11 @@ public class GameSystem : MonoBehaviour
     }
     void OnEnable()
     {
-        // ¾À ¸Å´ÏÀúÀÇ sceneLoaded¿¡ Ã¼ÀÎÀ» °Ç´Ù.
+        // ï¿½ï¿½ ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½ sceneLoadedï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½.
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Ã¼ÀÎÀ» °É¾î¼­ ÀÌ ÇÔ¼ö´Â ¸Å ¾À¸¶´Ù È£ÃâµÈ´Ù.
+    // Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½É¾î¼­ ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½È´ï¿½.
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "02_MainScene")
