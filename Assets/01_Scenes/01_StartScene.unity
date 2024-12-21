@@ -1135,6 +1135,8 @@ MonoBehaviour:
   BadChat_images: []
   GoodChat_images: []
   hpbarscript: {fileID: 0}
+  UI: {fileID: 0}
+  Score: 0
   Timer: 0
 --- !u!4 &1900669602
 Transform:

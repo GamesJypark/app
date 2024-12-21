@@ -76,7 +76,7 @@ public class GameSystem : MonoBehaviour
 
         if (Hp <= 0)
         {
-            UI.uista = UiScene.UIStatus.end;
+            if(UI != null)UI.uista = UiScene.UIStatus.end;
         }
     }
 
