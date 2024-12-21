@@ -56,10 +56,6 @@ public class GameSystem : MonoBehaviour
     private void Update()
     {
         Timer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            GameSet();
-        }
     }
     void OnEnable()
     {
