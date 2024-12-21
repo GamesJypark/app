@@ -10,8 +10,7 @@ public class GameSystem : MonoBehaviour
     public hpbarscript hpbarscript;
     private int Score = 0;
     private int Hp = 0;
-    private float Max_Time = 0;
-    private float Exist_Time = 0;
+    public float Timer = 0;
     void Awake()
     {
         if(gameSystem == null)
@@ -28,8 +27,7 @@ public class GameSystem : MonoBehaviour
     {
         Score = 0;
         Hp = 4;
-        Max_Time = 100;
-        Exist_Time = 0;
+        Timer = 0;
         ChatSpawn();
     }
     public void ScoreUp(int Quantity)
@@ -57,6 +55,7 @@ public class GameSystem : MonoBehaviour
     }
     private void Update()
     {
+        Timer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Z))
         {
             GameSet();
