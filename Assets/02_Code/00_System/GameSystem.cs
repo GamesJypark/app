@@ -73,6 +73,7 @@ public class GameSystem : MonoBehaviour
         if (scene.name == "02_MainScene")
         {
             GameSet();
+            hpbarscript = FindFirstObjectByType<hpbarscript>();
         }
     }
 
