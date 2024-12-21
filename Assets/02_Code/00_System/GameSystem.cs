@@ -74,6 +74,7 @@ public class GameSystem : MonoBehaviour
         {
             GameSet();
             hpbarscript = FindFirstObjectByType<hpbarscript>();
+            UI = FindFirstObjectByType<UiScene>();
         }
         else
         {
