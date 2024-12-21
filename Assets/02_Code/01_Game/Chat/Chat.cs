@@ -37,7 +37,8 @@ public class Chat : MonoBehaviour
         {
             if (GameSystem.gameSystem.isBossExist) Speed = 2;
             else if (Speed < 5) Speed = 2 + Mathf.Pow(2, GameSystem.gameSystem.Timer / 10);
-            else Speed = 5;
+            else Speed = 5
+                    ;
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + Time.deltaTime * 100 * Speed);
             if(gameObject.GetComponent<RectTransform>().anchoredPosition.y >= -310 && isMoved == false)
             {

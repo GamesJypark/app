@@ -99,6 +99,16 @@ public class GameSystem : MonoBehaviour
             {
                 SceneManager.LoadScene(2);
             }
+            if(Hp >= 3 && SoundManager.soundManager.audioSource.clip != SoundManager.soundManager.audioClips[2])
+            {
+                SoundManager.soundManager.audioSource.clip = SoundManager.soundManager.audioClips[2];
+                SoundManager.soundManager.audioSource.Play();
+            }
+            else if(Hp <= 2 && SoundManager.soundManager.audioSource.clip != SoundManager.soundManager.audioClips[3])
+            {
+                SoundManager.soundManager.audioSource.clip = SoundManager.soundManager.audioClips[3];
+                SoundManager.soundManager.audioSource.Play();
+            }
         }
     }
     void OnEnable()
