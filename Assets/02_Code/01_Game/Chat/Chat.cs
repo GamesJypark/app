@@ -31,7 +31,7 @@ public class Chat : MonoBehaviour
         {
             Speed = Mathf.Pow(2, GameSystem.gameSystem.Timer/10);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + Time.deltaTime * 100 * Speed);
-            if(gameObject.GetComponent<RectTransform>().anchoredPosition.y >= -400 && isMoved == false)
+            if(gameObject.GetComponent<RectTransform>().anchoredPosition.y >= -310 && isMoved == false)
             {
                 isMoved = true;
                 GameSystem.gameSystem.ChatSpawn();
