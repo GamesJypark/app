@@ -10,17 +10,17 @@ public class end_scene : MonoBehaviour
 
     public Text time;
 
-    public GameSystem GameSystem;
+    //public GameSystem GameSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Awake()
     {
-        GameSystem = GetComponent<GameSystem>();
+        //GameSystem = GetComponent<GameSystem>();
     }
 
     void Start()
     {
-        able.text = "처리한 악플 : " + GameSystem.Score.ToString() + "개";
-        time.text = "방송 시간 : "+GameSystem.Timer.ToString() + "초";
+        able.text = "처리한 악플 : " + GameSystem.gameSystem.Score.ToString() + "개";
+        time.text = "방송 시간 : "+GameSystem.gameSystem.Timer.ToString() + "초";
     }
 
     // Update is called once per frame

@@ -70,18 +70,6 @@ public class GameSystem : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
         }
-            if (Input.GetKeyDown(KeyCode.A))
-        {
-            SceneManager.LoadScene(0);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SceneManager.LoadScene(1);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SceneManager.LoadScene(2);
-        }
     }
     void OnEnable()
     {

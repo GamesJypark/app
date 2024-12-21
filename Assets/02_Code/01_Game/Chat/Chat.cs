@@ -13,7 +13,8 @@ public class Chat : MonoBehaviour
     {
         Chat chat1 = Instantiate(gameObject).GetComponent<Chat>();
         chat1.GetComponent<Image>().sprite = sprite;
-        chat1.transform.SetParent(GameObject.Find("Content").transform, false);
+        if (GameObject.Find("Content") != null) chat1.transform.SetParent(GameObject.Find("Content").transform, false);
+        else Destroy(gameObject);
         chat1.Score = Input_Score;
         chat1.Speed = Input_Speed;
         chat1.isMoved = false;
