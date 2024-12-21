@@ -10,8 +10,8 @@ public class webcam : MonoBehaviour
     WebCamTexture camTexture;
     private int currentIndex = 0;
     public bool isHit = false;
-    public float blinkDuration = 5f;
-    public float blinkInterval = 0.5f;
+    public float blinkDuration = 2f;
+    public float blinkInterval = 1f;
     public GameObject fliter;
     void Awake()
     {
