@@ -11,7 +11,7 @@ public class UiScene : MonoBehaviour
     }
 
     public UIStatus uista;
-
+    public Text web;
     public List<GameObject> pane;
     public Text playername;
     public InputField playerNameInput;
@@ -38,6 +38,8 @@ public class UiScene : MonoBehaviour
                 pane[0].SetActive(false);
                 pane[1].SetActive(true);
                 playername.text = player;
+                
+                web.text = Random.Range(1, 100).ToString();
                 break;
             case UIStatus.end:
                 SceneManager.LoadScene("03_EndingScene");
@@ -47,6 +49,7 @@ public class UiScene : MonoBehaviour
 
     public void starttoplay()
     {
+        print("2ws");
         uista = UIStatus.play;
         playername.text = player;
     }
