@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSystem : MonoBehaviour
 {
     public static GameSystem gameSystem = null;
+    public Chat chat;
+    public Sprite[] BadChat_images;
+    public Sprite[] GoodChat_images;
     private int Score = 0;
     private int Fault_Score = 0;
     private float Max_Time = 0;
@@ -29,5 +33,14 @@ public class GameSystem : MonoBehaviour
     public void ScoreUp(int Quantity)
     {
         Score += Quantity;
+    }
+    public void ChatSpawn()
+    {
+        chat.Spawn(1, 1, BadChat_images[Random.Range(0, 4)]);
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
     }
 }

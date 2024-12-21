@@ -19,15 +19,10 @@ public class Chat : MonoBehaviour
         chat1.Move_Cycle_Now = Input_Move_Cycle;
         chat1.isMoved = false;
     }
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         if (gameObject.GetComponent<RectTransform>().anchoredPosition.y > 490)
         {
-            Debug.Log("실패!");
             Destroy(gameObject);
         }
         else
@@ -39,10 +34,5 @@ public class Chat : MonoBehaviour
                 FindFirstObjectByType<TestSystem>().ChatSpawn();
             }
         }
-    }
-    public void Hit()
-    {
-        Debug.Log("성공!");
-        GameSystem.gameSystem.ScoreUp(Score);
     }
 }
